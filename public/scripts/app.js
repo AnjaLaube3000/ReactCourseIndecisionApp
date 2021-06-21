@@ -26,16 +26,11 @@ var VisibilityToggle = function (_React$Component) {
   _createClass(VisibilityToggle, [{
     key: 'handleToggleVisibility',
     value: function handleToggleVisibility() {
-      this.setState(function () {
+      this.setState(function (prevState) {
         return {
-          // if (visibility) {
-          //   visibility: false
-          // } else {
-          // }
-          visibility: true
+          visibility: !prevState.visibility
         };
       });
-      console.log('Hund');
     }
   }, {
     key: 'render',
@@ -51,9 +46,9 @@ var VisibilityToggle = function (_React$Component) {
         React.createElement(
           'button',
           { onClick: this.handleToggleVisibility },
-          this.visibility ? 'Hide Details' : 'Show Details'
+          this.state.visibility ? 'Hide Details' : 'Show Details'
         ),
-        this.visibility && React.createElement(
+        this.state.visibility && React.createElement(
           'div',
           null,
           React.createElement(
@@ -70,30 +65,3 @@ var VisibilityToggle = function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(VisibilityToggle, null), document.getElementById('app'));
-
-// let visibility = false;
-
-// const toggleVisibility = () => {
-//   visibility = !visibility;
-//   render();
-// };
-
-// const render = () => {
-//   const jsx = (
-//     <div>
-//       <h1>Visibility Toggle</h1>
-//       <button onClick={toggleVisibility}>
-//         {visibility ? 'Hide details' : 'Show details'}
-//       </button>
-//       {visibility && (
-//         <div>
-//           <p>Hey. These are some details you can now see!</p>
-//         </div>
-//       )}
-//     </div>
-//   )
-
-//   ReactDOM.render(jsx, document.getElementById('app'))
-// }
-
-// render()
