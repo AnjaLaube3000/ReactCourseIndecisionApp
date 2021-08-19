@@ -11,6 +11,6 @@ const OptionModal = (props) => (
     {props.selectedOption && <p>{props.selectedOption}</p>}
     <button onClick={props.handleClearSelectedOption}>Okay</button>
   </Modal>
-)
+);
 
-export default OptionModal
+export default OptionModal;
